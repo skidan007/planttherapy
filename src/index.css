@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-forest: #123C2A;
+  --color-primary: #1F5A3D;
+  --color-fresh: #3F7D4F;
+  --color-sage: #E7F0E8;
+  --color-cream: #FAF8F1;
+  --color-ink: #17231C;
+  --color-muted: #68736B;
+  --color-line: #DDE3D9;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FFFFFF;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-fresh);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-toast {
+  animation: toast-in 0.25s ease-out;
+}
+
+@keyframes drawer-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-drawer {
+  animation: drawer-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
