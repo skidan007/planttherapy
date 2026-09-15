@@ -131,10 +131,10 @@ export default function Hero() {
             const isCurrent = realIndex === active && (slideCount === 1 || index === trackIndex);
             return (
               <article className="hero-carousel-slide" key={`${product.slug}-${index}`} aria-hidden={!isCurrent}>
-                <img src={product.image} alt="" className="hero-carousel-image" draggable="false" loading={isCurrent ? "eager" : "lazy"} />
+                <img src={product.carouselImage || product.image} alt={product.name} className="hero-carousel-image" draggable="false" loading={isCurrent ? "eager" : "lazy"} />
                 <div className="hero-carousel-shade" />
                 <div className="hero-carousel-content">
-                  <span className="text-xs uppercase tracking-[0.22em] text-fresh">{product.eyebrow}</span>
+                  <span className="text-xs uppercase tracking-[0.22em] text-emerald-600">{product.eyebrow}</span>
                   <h1 className="mt-3 max-w-xl text-3xl leading-[1.05] text-cream sm:text-5xl lg:text-6xl">{product.heroTitle}</h1>
                   <p className="mt-4 max-w-md text-sm leading-6 text-cream/80 sm:text-base sm:leading-7">{product.heroDescription}</p>
                   <Link to={`/shop/${product.slug}`} className="interactive-button mt-6 inline-flex rounded-md bg-cream px-5 py-3 text-sm text-forest hover:bg-white">Shop {product.name}</Link>

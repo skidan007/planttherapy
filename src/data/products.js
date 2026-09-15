@@ -6,6 +6,9 @@ import gingerTea2 from "../assets/images/gingerTea2.png";
 import gingerTea3 from "../assets/images/gingerTea3.png";
 import gingerPowder2 from "../assets/images/gingerPowder2.png";
 import gingerPowder3 from "../assets/images/gingerPowder3.png";
+import oilCarousel from "../assets/images/oilcaro.png";
+import powderCarousel from "../assets/images/powdercaro.png";
+import teaCarousel from "../assets/images/teacaro.png";
 
 
 export const products = [
@@ -17,6 +20,7 @@ export const products = [
     category: "Ginger",
     image: gingerPowder,
     images: [gingerPowder, gingerPowder2, gingerPowder3],
+    carouselImage: powderCarousel,
     eyebrow: "Natural wellness, made with care",
     heroTitle: "Pure Ginger. Everyday Wellness.",
     heroDescription: "Premium ginger powder made from carefully prepared natural ginger, crafted for simple everyday wellness.",
@@ -53,6 +57,7 @@ export const products = [
     category: "Tea",
     image: gingerTea,
     images: [gingerTea, gingerTea2, gingerTea3],
+    carouselImage: teaCarousel,
     eyebrow: "Pure warmth. Natural wellness.",
     heroTitle: "Pure Warmth. Natural Wellness.",
     heroDescription: "Premium dried ginger tea made for a simple, comforting and boosting immune system.",
@@ -83,8 +88,9 @@ export const products = [
     category: "Oil",
     image: arikaOil,
     images: [arikaOil, arikaOil2],
+    carouselImage: oilCarousel,
     eyebrow: "Rooted in natural care",
-    heroTitle: "Botanical Care, Naturally.",
+    heroTitle: "Pain relief, Naturally.",
     heroDescription: "A ginger oil prepared for a thoughtful personal-care routine.",
     description: "A botanical oil prepared for nourishing personal care.",
     longDescription:
