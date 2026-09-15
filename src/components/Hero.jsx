@@ -30,6 +30,23 @@ export default function Hero() {
   }, [active, isPaused, slideCount]);
 
   useEffect(() => {
+    const imageUrls = [...new Set(products.map((product) => product.carouselImage || product.image))];
+    const preloadedImages = imageUrls.map((src) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.src = src;
+      return image;
+    });
+
+    return () => {
+      preloadedImages.forEach((image) => {
+        image.onload = null;
+        image.onerror = null;
+      });
+    };
+  }, []);
+
+  useEffect(() => {
     const carousel = carouselRef.current;
     if (!carousel) return undefined;
 
@@ -101,6 +118,24 @@ export default function Hero() {
     setIsDragging(false);
   }
 
+  function handleImageError(event, product) {
+    const image = event.currentTarget;
+    const source = product.carouselImage || product.image;
+    const fallback = product.image;
+
+    if (!image.dataset.retryAttempted) {
+      image.dataset.retryAttempted = "true";
+      image.src = `${source}${source.includes("?") ? "&" : "?"}retry=1`;
+      if (import.meta.env.DEV) console.warn("Retrying hero image:", source);
+      return;
+    }
+
+    if (image.src !== new URL(fallback, window.location.href).href) {
+      image.src = fallback;
+      if (import.meta.env.DEV) console.warn("Using hero image fallback:", fallback);
+    }
+  }
+
   return (
     <section className="hero-carousel-section" aria-roledescription="carousel" aria-label="Featured products">
       <div
@@ -131,7 +166,16 @@ export default function Hero() {
             const isCurrent = realIndex === active && (slideCount === 1 || index === trackIndex);
             return (
               <article className="hero-carousel-slide" key={`${product.slug}-${index}`} aria-hidden={!isCurrent}>
-                <img src={product.carouselImage || product.image} alt={product.name} className="hero-carousel-image" draggable="false" loading={isCurrent ? "eager" : "lazy"} />
+                <img
+                  src={product.carouselImage || product.image}
+                  alt={product.name}
+                  className="hero-carousel-image"
+                  draggable="false"
+                  loading="eager"
+                  fetchPriority={isCurrent ? "high" : "auto"}
+                  decoding="async"
+                  onError={(event) => handleImageError(event, product)}
+                />
                 <div className="hero-carousel-shade" />
                 <div className="hero-carousel-content">
                   <span className="text-xs uppercase tracking-[0.22em] text-emerald-600">{product.eyebrow}</span>

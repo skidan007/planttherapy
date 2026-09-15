@@ -167,8 +167,26 @@
 }
 
 .mobile-menu-panel {
-  background: var(--color-cream);
+  background-color: var(--color-cream);
   color: var(--color-ink);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 767px) {
+  .navbar-header {
+    z-index: 1100;
+  }
+
+  .mobile-menu-root {
+    z-index: 1200;
+  }
+
+  .mobile-menu-panel {
+    background-color: var(--color-cream);
+    isolation: isolate;
+    overflow-y: auto;
+  }
 }
 
 .mobile-menu-link {
@@ -338,8 +356,7 @@
 
   .hero-carousel-slide {
     flex-basis: calc(100vw - 64px);
-    aspect-ratio: 0.93 / 1;
-    min-height: 350px;
+    aspect-ratio: 16 / 9;
     border-radius: 15px;
   }
 
@@ -352,24 +369,41 @@
   }
 
   .hero-carousel-content {
-    max-width: 100%;
-    padding: 1.25rem;
+    width: 50%;
+    max-width: 50%;
+    padding: 0.65rem 0.7rem;
   }
 
   .hero-carousel-content > span {
     display: block;
-    height: 2rem;
+    height: 1rem;
+    font-size: 0.65rem;
     line-height: 1rem;
     overflow: hidden;
   }
 
   .hero-carousel-content h1 {
-    min-height: 6.3rem;
-    font-size: 2rem;
+    min-height: 0;
+    margin-top: 0.15rem;
+    font-size: 1.5rem;
+    line-height: 1.05;
   }
 
   .hero-carousel-content p {
-    min-height: 6rem;
+    min-height: 0;
+    margin-top: 0.3rem;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .hero-carousel-content a {
+    margin-top: 0.4rem;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.8rem;
   }
 
   .hero-carousel-pagination {

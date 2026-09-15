@@ -35,8 +35,9 @@ export default function Navbar() {
   }
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b bg-white/95 backdrop-blur transition-shadow ${
+    <>
+      <header
+      className={`navbar-header sticky top-0 z-50 border-b bg-white/95 backdrop-blur transition-shadow ${
         scrolled ? "border-line shadow-[0_1px_0_rgba(18,60,42,0.05)]" : "border-transparent"
       }`}
     >
@@ -146,7 +147,8 @@ export default function Navbar() {
         </div>
       )}
 
+      </header>
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} itemCount={itemCount} />
-    </header>
+    </>
   );
 }

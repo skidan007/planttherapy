@@ -23,7 +23,7 @@ export const products = [
     carouselImage: powderCarousel,
     eyebrow: "Natural wellness, made with care",
     heroTitle: "Pure Ginger. Everyday Wellness.",
-    heroDescription: "Premium ginger powder made from carefully prepared natural ginger, crafted for simple everyday wellness.",
+    heroDescription: "Premium ginger powder made from carefully prepared natural ginger.",
     description: "Finely ground ginger with a warm, naturally rich flavour.",
     longDescription:
       "Our ginger powder is milled from carefully selected ginger root and dried using a slow, low-temperature process that keeps its warmth and character intact. Stir it into hot water, tea, or your everyday cooking for a simple, consistent addition to your routine.",
@@ -60,7 +60,7 @@ export const products = [
     carouselImage: teaCarousel,
     eyebrow: "Pure warmth. Natural wellness.",
     heroTitle: "Pure Warmth. Natural Wellness.",
-    heroDescription: "Premium dried ginger tea made for a simple, comforting and boosting immune system.",
+    heroDescription: "Premium dried ginger tea made for boosting immune system.",
     description: "A comforting ginger tea blend for a simple daily ritual.",
     longDescription:
       "A clean, comforting blend built around dried ginger, meant to be steeped slowly and enjoyed without hurry. Each pouch is portioned for a single cup, so your ritual stays consistent morning after morning.",

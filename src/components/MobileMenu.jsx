@@ -27,13 +27,13 @@ export default function MobileMenu({ open, onClose, itemCount = 0 }) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-90 md:hidden">
+    <div className="mobile-menu-root fixed inset-0 md:hidden">
       <button
         aria-label="Close menu"
         className="absolute inset-0 bg-ink/40"
         onClick={onClose}
       />
-      <div role="dialog" aria-modal="true" aria-label="Mobile navigation" className="mobile-menu-panel animate-drawer absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col border-l border-line shadow-[var(--shadow-lg)]">
+      <div role="dialog" aria-modal="true" aria-label="Mobile navigation" className="mobile-menu-panel absolute right-0 top-0 flex h-full w-full max-w-none flex-col border-l border-line shadow-[var(--shadow-lg)]">
         <div className="flex items-center justify-between border-b border-line px-6 py-5">
           <div className="flex items-center gap-2">
             <Leaf size={18} className="text-fresh" />
