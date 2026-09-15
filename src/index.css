@@ -211,7 +211,8 @@
 
   .hero-carousel-slide {
     flex-basis: calc(100vw - 64px);
-    aspect-ratio: 1.45 / 1;
+    aspect-ratio: 0.93 / 1;
+    min-height: 350px;
     border-radius: 15px;
   }
 
@@ -224,8 +225,24 @@
   }
 
   .hero-carousel-content {
-    max-width: 88%;
-    padding: 1.5rem;
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .hero-carousel-content > span {
+    display: block;
+    height: 2rem;
+    line-height: 1rem;
+    overflow: hidden;
+  }
+
+  .hero-carousel-content h1 {
+    min-height: 6.3rem;
+    font-size: 2rem;
+  }
+
+  .hero-carousel-content p {
+    min-height: 6rem;
   }
 
   .hero-carousel-pagination {
