@@ -6,9 +6,9 @@ import gingerTea2 from "../assets/images/gingerTea2.png";
 import gingerTea3 from "../assets/images/gingerTea3.png";
 import gingerPowder2 from "../assets/images/gingerPowder2.png";
 import gingerPowder3 from "../assets/images/gingerPowder3.png";
-import oilCarousel from "../assets/images/oilcaro.png";
-import powderCarousel from "../assets/images/powdercaro.png";
-import teaCarousel from "../assets/images/teacaro.png";
+import oilCarousel from "../assets/images/oilCaro.png";
+import powderCarousel from "../assets/images/powderCaro.png";
+import teaCarousel from "../assets/images/teaCaro.png";
 
 
 export const products = [
