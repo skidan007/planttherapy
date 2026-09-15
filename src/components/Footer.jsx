@@ -45,11 +45,11 @@ export default function Footer() {
 
       <div className="border-t border-cream/10">
         <div className="container-page flex flex-col items-start justify-between gap-4 py-6 text-xs text-cream/60 sm:flex-row sm:items-center">
-          <p>© 2026 Root &amp; Ritual. All rights reserved. Natural wellness, thoughtfully made.</p>
+          <p>© 2026 Arika Ginger. All rights reserved. A non invasive chinese treatment.</p>
           <div className="flex items-center gap-4 text-[13px] font-medium">
             <a href="#" className="hover:text-white">Instagram</a>
             <a href="#" className="hover:text-white">Facebook</a>
-            <a href="#" className="hover:text-white">TikTok</a>
+            <a href="https://www.tiktok.com/@drfangtherapy?_r=1&_t=ZS-99lTW1D7fpU" className="hover:text-white">TikTok</a>
           </div>
         </div>
       </div>
