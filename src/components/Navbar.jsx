@@ -60,9 +60,7 @@ export default function Navbar() {
               to={link.to}
               end={link.to === "/"}
               className={({ isActive }) =>
-                `text-sm transition-colors hover:text-forest ${
-                  isActive ? "text-forest font-medium" : "text-ink"
-                }`
+                `navbar-link ${isActive ? "navbar-link-active" : ""}`
               }
             >
               {link.label}
@@ -106,16 +104,20 @@ export default function Navbar() {
           </NavLink>
           <NavLink
             to="/shop"
-            className="ml-3 hidden bg-forest px-5 py-2.5 text-sm text-white transition-colors hover:bg-primary md:inline-block"
+            className="navbar-shop-button ml-3 hidden md:inline-block"
           >
             Shop Now
           </NavLink>
           <button
-            aria-label="Open menu"
-            onClick={() => setMobileOpen(true)}
-            className="p-2 text-ink md:hidden"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((open) => !open)}
+            className="navbar-menu-toggle md:hidden"
           >
-            <Menu size={22} />
+            <span className={`navbar-menu-icon ${mobileOpen ? "navbar-menu-icon-open" : ""}`}>
+              <Menu size={22} aria-hidden="true" />
+              <X size={22} aria-hidden="true" />
+            </span>
           </button>
         </div>
       </div>

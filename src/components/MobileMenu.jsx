@@ -33,7 +33,7 @@ export default function MobileMenu({ open, onClose, itemCount = 0 }) {
         className="absolute inset-0 bg-ink/40"
         onClick={onClose}
       />
-      <div role="dialog" aria-modal="true" aria-label="Mobile navigation" className="animate-drawer absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col border-l border-line bg-cream shadow-[var(--shadow-lg)]">
+      <div role="dialog" aria-modal="true" aria-label="Mobile navigation" className="mobile-menu-panel animate-drawer absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col border-l border-line shadow-[var(--shadow-lg)]">
         <div className="flex items-center justify-between border-b border-line px-6 py-5">
           <div className="flex items-center gap-2">
             <Leaf size={18} className="text-fresh" />
@@ -55,9 +55,7 @@ export default function MobileMenu({ open, onClose, itemCount = 0 }) {
               end={link.to === "/"}
               onClick={onClose}
               className={({ isActive }) =>
-                `border-b border-line py-4 text-base ${
-                  isActive ? "text-forest font-medium" : "text-ink"
-                }`
+                `mobile-menu-link ${isActive ? "mobile-menu-link-active" : ""}`
               }
             >
               {link.label}
