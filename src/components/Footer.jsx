@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="col-span-2">
           <div className="flex items-center gap-2">
             <Leaf size={18} className="text-fresh" />
-            <span className="font-serif text-xl">Root &amp; Ritual</span>
+            <span className="font-serif text-xl">ARIKA Ginger</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/70">
             Natural wellness, thoughtfully made.

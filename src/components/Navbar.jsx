@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Leaf, Search, ShoppingBag, Menu, X } from "lucide-react";
+import { Leaf, Search, ShoppingBag, Menu, X, UserRound } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import MobileMenu from "./MobileMenu";
 
@@ -40,15 +40,15 @@ export default function Navbar() {
         scrolled ? "border-line shadow-[0_1px_0_rgba(18,60,42,0.05)]" : "border-transparent"
       }`}
     >
-      <div className="container-page flex h-16 items-center justify-between md:h-[72px]">
+      <div className="container-page flex h-16 items-center justify-between md:h-18">
         <NavLink to="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center bg-forest">
             <Leaf size={16} className="text-cream" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-serif text-lg text-forest">Arika Ginger</span>
+            <span className="font-serif text-lg text-forest">ARIKA Ginger</span>
             <span className="hidden text-[10px] tracking-wide text-muted sm:block">
-              Natural Treatments
+              Natural Wellness
             </span>
           </span>
         </NavLink>
@@ -79,9 +79,23 @@ export default function Navbar() {
             <Search size={19} />
           </button>
           <NavLink
+            to="/about"
+            aria-label="Account"
+            className="hidden p-2 text-ink hover:text-fresh md:inline-flex"
+          >
+            <UserRound size={19} />
+          </NavLink>
+          <NavLink
+            to="/about"
+            aria-label="Account"
+            className="inline-flex p-2 text-ink transition-colors hover:text-fresh md:hidden"
+          >
+            <UserRound size={19} />
+          </NavLink>
+          <NavLink
             to="/cart"
             aria-label="View cart"
-            className="relative inline-flex p-2 text-ink hover:text-fresh"
+            className="relative inline-flex p-2 text-ink transition-colors hover:text-fresh"
           >
             <ShoppingBag size={19} />
             {itemCount > 0 && (
@@ -130,7 +144,7 @@ export default function Navbar() {
         </div>
       )}
 
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} itemCount={itemCount} />
     </header>
   );
 }

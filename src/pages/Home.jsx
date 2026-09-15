@@ -6,6 +6,7 @@ import SectionHeading from "../components/SectionHeading";
 import ProductGrid from "../components/ProductGrid";
 import TestimonialCard from "../components/TestimonialCard";
 import ProductImage from "../components/ProductImage";
+import Reveal from "../components/Reveal";
 import { products } from "../data/products";
 
 const RITUAL_STEPS = [
@@ -39,23 +40,23 @@ export default function Home() {
 
       {/* Featured Products */}
       <section className="container-page py-20">
-        <SectionHeading
+        <Reveal><SectionHeading
           label="Shop"
           heading="Our everyday essentials"
           text="Three simple products. Thoughtfully made for your wellness routine."
-        />
-        <div className="mt-10">
+        /></Reveal>
+        <Reveal delay={100}><div className="mt-10">
           <ProductGrid products={products} />
-        </div>
+        </div></Reveal>
       </section>
 
       {/* Why Root & Ritual */}
       <section className="border-y border-line bg-cream">
         <div className="container-page py-20">
-          <SectionHeading
+          <Reveal><SectionHeading
             heading="Wellness doesn't have to be complicated."
             text="We believe everyday wellness can start with simple ingredients, thoughtful preparation and rituals that fit naturally into your routine."
-          />
+          /></Reveal>
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3">
             {[
               { title: "Simple Ingredients", text: "Products made around familiar botanical ingredients." },
@@ -75,7 +76,7 @@ export default function Home() {
       {/* Featured Product Story */}
       <section className="container-page grid grid-cols-1 items-center gap-12 py-20 md:grid-cols-2">
         <div className="aspect-square border border-line bg-cream md:order-1">
-          <ProductImage image="ginger-powder" className="h-full w-full" />
+          <ProductImage image={products[0].image} alt={products[0].name} className="h-full w-full" />
         </div>
         <div className="flex flex-col items-start gap-4">
           <span className="inline-flex items-center bg-sage px-3 py-1 text-xs text-forest">
@@ -90,7 +91,7 @@ export default function Home() {
           </p>
           <Link
             to="/shop/ginger-powder"
-            className="mt-2 border border-forest px-6 py-3 text-sm text-forest transition-colors hover:bg-sage"
+            className="interactive-button mt-2 rounded-md border border-forest px-6 py-3 text-sm text-forest hover:bg-forest hover:text-white"
           >
             Explore Ginger
           </Link>
@@ -116,7 +117,7 @@ export default function Home() {
       {/* Testimonials */}
       <section className="container-page py-20">
         <SectionHeading label="Reviews" heading="What people are saying" />
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-6">
           {TESTIMONIALS.map((t) => (
             <TestimonialCard key={t.name} {...t} />
           ))}

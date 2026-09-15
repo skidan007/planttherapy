@@ -12,6 +12,9 @@
   --color-ink: #17231C;
   --color-muted: #68736B;
   --color-line: #DDE3D9;
+  --shadow-sm: 0 4px 14px rgba(18, 60, 42, 0.08);
+  --shadow-md: 0 12px 30px rgba(18, 60, 42, 0.12);
+  --shadow-lg: 0 20px 55px rgba(18, 60, 42, 0.18);
 }
 
 @layer base {
@@ -68,4 +71,77 @@
 }
 .animate-drawer {
   animation: drawer-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.45s ease-out;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out var(--reveal-delay, 0ms), transform 0.6s ease-out var(--reveal-delay, 0ms);
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.interactive-button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+.interactive-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.interactive-button:active {
+  transform: translateY(0);
+}
+
+.gallery-image {
+  animation: gallery-image-in 0.4s ease-out;
+}
+@keyframes gallery-image-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--color-fresh) 55%, var(--color-line));
+    box-shadow: var(--shadow-md);
+  }
+  .product-card-image {
+    transition: transform 0.45s ease;
+  }
+  .product-card:hover .product-card-image {
+    transform: scale(1.04);
+  }
+  .gallery-zoom {
+    transition: transform 0.45s ease;
+  }
+  .gallery-zoom:hover {
+    transform: scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -17,7 +17,8 @@ export default function Contact() {
     const next = {};
     if (!form.name.trim()) next.name = "Name is required.";
     if (!form.email.trim()) next.email = "Email is required.";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = "Enter a valid email address.";
+    else if (!/^\S+@\S+\.\S+$/.test(form.email))
+      next.email = "Enter a valid email address.";
     if (!form.message.trim()) next.message = "Please enter a message.";
     return next;
   }
@@ -45,7 +46,10 @@ export default function Contact() {
       </div>
 
       <div className="container-page grid grid-cols-1 gap-14 py-16 lg:grid-cols-3">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:col-span-2">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4 lg:col-span-2"
+        >
           {sent && (
             <div className="mb-2 flex items-center gap-2 border border-fresh bg-sage px-4 py-3 text-sm text-forest">
               <CheckCircle2 size={16} />
@@ -95,11 +99,19 @@ export default function Contact() {
         </form>
 
         <div className="flex flex-col gap-6">
-          <InfoRow icon={Mail} label="Email" value="hello@rootandritual.example" />
-          <InfoRow icon={Phone} label="Phone" value="+234 800 000 0000" />
-          <InfoRow icon={Clock} label="Business Hours" value="Mon – Sat, 9am – 6pm" />
+          <InfoRow
+            icon={Mail}
+            label="Email"
+            value="planttherapyusa2@gmail.com"
+          />
+          <InfoRow icon={Phone} label="Phone" value="+234 70 3010 5804" />
+          <InfoRow
+            icon={Clock}
+            label="Business Hours"
+            value="Mon – Sat, 8-30am – 5pm"
+          />
           <a
-            href="https://wa.me/2348000000000"
+            href="https://wa.me/2347030105804"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-3 border border-forest px-5 py-3.5 text-sm text-forest transition-colors hover:bg-sage"
