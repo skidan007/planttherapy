@@ -55,7 +55,7 @@ export const products = [
     images: [gingerTea, gingerTea2, gingerTea3],
     eyebrow: "Pure warmth. Natural wellness.",
     heroTitle: "Pure Warmth. Natural Wellness.",
-    heroDescription: "Premium dried ginger tea made for a simple, comforting daily wellness ritual.",
+    heroDescription: "Premium dried ginger tea made for a simple, comforting and boosting immune system.",
     description: "A comforting ginger tea blend for a simple daily ritual.",
     longDescription:
       "A clean, comforting blend built around dried ginger, meant to be steeped slowly and enjoyed without hurry. Each pouch is portioned for a single cup, so your ritual stays consistent morning after morning.",
@@ -85,7 +85,7 @@ export const products = [
     images: [arikaOil, arikaOil2],
     eyebrow: "Rooted in natural care",
     heroTitle: "Botanical Care, Naturally.",
-    heroDescription: "A botanical oil prepared for a thoughtful personal-care routine.",
+    heroDescription: "A ginger oil prepared for a thoughtful personal-care routine.",
     description: "A botanical oil prepared for nourishing personal care.",
     longDescription:
       "A lightweight botanical oil, prepared in small batches and bottled in dark glass to protect it from light. Arika Oil is designed to sit simply in your personal care routine — measured, unhurried, and easy to return to.",

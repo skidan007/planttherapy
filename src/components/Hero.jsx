@@ -49,9 +49,7 @@ export default function Hero() {
             <div key={product.slug} className="h-full w-full animate-fade-in">
               <ProductImage image={product.image} alt={product.name} className="h-full min-h-[300px] w-full md:min-h-[440px]" />
             </div>
-            <span className="absolute bottom-5 left-5 text-[10px] tracking-[0.28em] text-forest/60 sm:bottom-8 sm:left-8">
-              ARIKA / {String(active + 1).padStart(2, "0")}
-            </span>
+            
           </div>
 
           <div className="flex flex-col justify-center bg-forest px-7 py-10 text-cream sm:px-12 sm:py-14 md:px-14">
