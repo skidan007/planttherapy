@@ -1,4 +1,4 @@
-# Arika ginger — Frontend
+# Arika ginger — Frontend.
 
 A premium Nigerian natural wellness e-commerce storefront (frontend only, no backend yet).
 
